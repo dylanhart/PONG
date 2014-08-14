@@ -4,4 +4,8 @@ run: pong.love
 
 pong.love: main.lua conf.lua
 	@echo "Generating pong.love"
-	zip -r pong.love . -x Makefile
+	zip -r pong.love . -x Makefile -x *.git* -x .gitignore
+
+clean:
+	@echo "Removing pong.love"
+	rm pong.love
