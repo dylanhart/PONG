@@ -111,7 +111,7 @@ function love.update(delta)
 		ball.angle = math.atan2(-math.sin(ball.angle), math.cos(ball.angle))
 	end
 	
-	if (ball.x < config.poffset + config.pwidth) then
+	if (ball.x < config.poffset + config.pwidth and ball.x > config.poffset) then
 		if (math.abs(ball.y - paddles.a.y) < config.psize / 2) then
 			size = size + 1
 			distortion:send("size", size)
@@ -121,7 +121,7 @@ function love.update(delta)
 		end
 	end
 
-	if (ball.x > config.swidth - (config.poffset + config.pwidth)) then
+	if (ball.x > config.swidth - (config.poffset + config.pwidth) and ball.x < config.swidth - config.poffset) then
 		if (math.abs(ball.y - paddles.b.y) < config.psize / 2) then
 			size = size + 1
 			distortion:send("size", size)
