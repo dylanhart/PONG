@@ -6,8 +6,8 @@ function love.load()
 		pwidth = 10,
 		pspeed = 200,
 		bspeed = 400,
-		swidth = 1000,
-		sheight = 500
+		swidth = love.window.getWidth(),
+		sheight = love.window.getHeight()
 	}
 
 	ball = {
